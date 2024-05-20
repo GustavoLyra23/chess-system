@@ -78,4 +78,12 @@ public class ChessMatch {
         board.placePiece(p, target);
         return capturedPiece;
     }
+
+    public boolean[][] possibleMoves(ChessPosition sourcePostion) {
+        Position position = sourcePostion.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
+    }
+
+
 }
